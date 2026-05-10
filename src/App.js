@@ -1,4 +1,4 @@
-import { useState, useEffect} from 'react';
+import { useState} from 'react';
 import './App.css';
 import foto from '../src/minha_foto2.png';
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
@@ -142,44 +142,15 @@ function SkillBar({nome, porcentagem}){
 }
 
 function Skills() {
-  const [linguagens, setLinguagens] = useState({});
-  const [carregando, setCarregando] = useState(true);
-
-  useEffect(() => {
-    async function buscarLinguagens() {
-      try {
-        const resposta = await fetch(
-          'https://api.github.com/users/IasminMoreira/repos',
-        );
-        const repos = await resposta.json();
-
-        const contagem = {};
-        repos.forEach(repo => {
-          if (repo.language) {
-            contagem[repo.language] = (contagem[repo.language] || 0) + 1;
-          }
-        });
-
-        setLinguagens(contagem);
-      } catch (erro) {
-        console.error('Erro ao buscar GitHub:', erro);
-      } finally {
-        setCarregando(false);
-      }
-    }
-
-    buscarLinguagens();
-  }, []);
-  
   const Frontend = [
     { nome: 'HTML/CSS', porcentagem: 80 },
     { nome: 'JavaScript', porcentagem: 60 },
     { nome: 'React', porcentagem: 65 },
   ];
 
-   const backend = [
-    { nome: 'Java', porcentagem: 70},
-    { nome: 'Springbot', porcentagem: 40 },
+  const backend = [
+    { nome: 'Java', porcentagem: 70 },
+    { nome: 'Springboot', porcentagem: 40 },
     { nome: 'MySQL', porcentagem: 80 },
   ];
 
@@ -187,33 +158,25 @@ function Skills() {
     <section className="skills">
       <h2>Skills</h2>
 
-      <p className="skill-grupo-titulo">frontend</p>
+      <p className="skill-grupo-titulo">Frontend</p>
       {Frontend.map((s, i) => (
         <SkillBar key={i} nome={s.nome} porcentagem={s.porcentagem} />
       ))}
 
-      {carregando ? (
-  <p style={{ fontSize: '13px', color: '#888', marginTop: '1rem' }}>
-    Carregando dados do GitHub...
-  </p>
-) : (
-  <>
-    <p className="skill-grupo-titulo" style={{ marginTop: '1.25rem' }}>Backend</p>
+      <p className="skill-grupo-titulo" style={{ marginTop: '1.25rem' }}>Backend</p>
       {backend.map((s, i) => (
-      <SkillBar key={i} nome={s.nome} porcentagem={s.porcentagem} />
-        ))}
-  </>
-)}
+        <SkillBar key={i} nome={s.nome} porcentagem={s.porcentagem} />
+      ))}
 
       <div className="idiomas">
         <p className="skill-grupo-titulo">Idiomas</p>
         <div className="idioma-item">
           <span className="idioma-nome">Português</span>
-          <span className='idioma-nivel'></span>
+          <span className='idioma-nivel'>Nativo</span>
         </div>
         <div className="idioma-item">
           <span className="idioma-nome">Inglês</span>
-          <span className='idioma-nivel'></span>
+          <span className='idioma-nivel'>Técnico</span>
         </div>
       </div>
     </section>
