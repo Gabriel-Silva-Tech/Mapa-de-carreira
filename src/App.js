@@ -31,7 +31,7 @@ function Sobre() {
       <p>
 Sou estudante de tecnologia pelo PROA Profissional, com foco em desenvolvimento Fullstack e aprofundando meus conhecimentos em Java, React e JavaScript. Meu objetivo é contribuir com o time no desenvolvimento de projetos excelentes, unindo qualidade técnica a uma boa experiência para o usuário. Acredito no crescimento contínuo tanto nas minhas hard e soft skills, e busco um ambiente onde eu possa aprender, colaborar e evoluir junto com a equipe.      </p>
       
-        <a href='' className='btn-cv'>Baixar meu cv</a>
+        <a href='#' className='btn-cv'>Baixar meu cv</a>
      
     </section>
   )
@@ -170,10 +170,7 @@ function Skills() {
 
     buscarLinguagens();
   }, []);
-
-  const total = Object.values(linguagens).reduce((a, b) => a + b, 0);
-  const calcularPct = (qtd) => Math.round((qtd / total) * 100);
-
+  
   const Frontend = [
     { nome: 'HTML/CSS', porcentagem: 80 },
     { nome: 'JavaScript', porcentagem: 60 },
