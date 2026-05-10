@@ -1,0 +1,377 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+* *::before *::after{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background: white;
+  color: #2a2a2a;
+  font-family:"Montserrat", sans-serif;
+}
+
+.pagina{
+  background: white;
+  min-height: 100vh;
+  padding: 2rem 0;
+}
+
+.folha{
+  background: white;
+  max-width: 960px;
+  margin: 0 auto;
+  box-shadow: 0 2px 20px rgb(0, 0, 0, 0.2);
+}
+
+.header{
+  top: 0px;
+  background:#0e8ceb;
+  display: flex;
+}
+
+.header-foto{
+  width: 180px;
+  height: 100%;
+  min-height: 160px;
+  object-fit: cover;
+  object-position: top;
+  flex-shrink: 0;
+  display: block;
+}
+
+.header-corpo{
+  flex: 1;
+  background: #0e8ceb;
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.info{
+  flex: 1;
+}
+
+.info h1{
+  font-family: "Montserrat", sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.cargo{
+  font-size: 18px;
+  color: white;
+  margin-top: 4px;
+}
+
+.email{
+  font-size: 14px;
+  color: white;
+  text-decoration: underline;
+  margin-top: 4px;
+  display: block;
+}
+
+.links{
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.links a{
+  font-size: 12px;
+  color: white;
+  text-decoration: underline;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.link svg{
+  flex-shrink: 0;
+}
+
+.link-icone{
+  width: 20px;
+  height: 20px;
+  background: white;
+  color: #0e8ceb;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: bold;
+  border-radius: 3px;
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+.links a:hover{
+    color: white;
+}
+
+.folha-corpo{
+  padding: 0 0 3rem 0;
+}
+
+.sobre{
+  padding: 2rem 2.5rem 1rem;
+  border-bottom: 1px solid #e8e6e1;
+}
+
+.sobre h2{
+  font-family: "Montserrat", sans-serif;
+  font-size: 40px;
+  color: #0e8ceb;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+
+.sobre p{
+  font-size: 16px;
+  color: #555;
+  line-height: 1.8;
+}
+
+.destaque{
+  color: #1a1a1a;
+  font-weight: 500;
+}
+
+.btn-cv{
+  display: inline-block;
+  margin-top: 1.25rem;
+  padding: 8px 20px;
+  border: 1.5px solid;
+  border-radius: 6px;
+  background: transparent;
+  font-size: 13px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  cursor: pointer;  
+  color: #1a1a1a;
+  text-decoration: none;
+}
+
+.btn-cv:hover{
+  background-color: #0e8ceb;
+  color: white;
+}
+
+.mapa{
+  padding-top: 2rem;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+
+.mapa h2{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 24px;
+  letter-spacing: 2px;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #e8e6e1;
+  padding: 0.5rem;
+}
+
+.timeline{
+  position: relative;
+  padding-left: 24px;
+}
+
+.timeline::before{
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: #ddd;
+}
+
+.etapa-wrapper{
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.timeline-dot{
+  position: absolute;
+  left: -26px;
+  top: 16px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid #0e8ceb;
+  background: white;
+  z-index: 1;
+}
+
+.etapa-wrapper:has(.etapa-wrapper) .timeline-dot{
+    background: #0e8ceb;
+}
+
+.etapa {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 1.25rem;
+  border-left: 3px solid #ddd;
+  background: #fff;
+}
+
+.etapa.atual{
+  border-left: 3px solid #0e8ceb;
+  background: #0e8ceb;
+  color: white;
+}
+
+.etapa-header{
+  display: flex;
+  justify-content:space-around;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.etapa.proximo h3 {
+  color: #1a1a1a;
+}
+
+.etapa.proximo .etapa-desc {
+  color: #555;
+}
+
+.etapa.proximo .etapa-sub {
+  color: #1a1a1a;
+}
+
+.etapa.proximo .etapa-lista li {
+  color: #555;
+}
+
+.etapa.proximo .seta {
+  color: #888;
+}
+
+.etapa.atual h3 {
+  color: white;
+}
+
+.etapa.atual .indicador {
+  color: white;
+  font-size: 15px;
+  border-radius: 10px;
+}
+
+.skill{
+  margin-bottom: 0.85rem;
+}
+
+.skills{
+  padding-top: 2rem;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+
+.skill-nome{
+  font-size: 20px;
+  color: #888;
+}
+
+.skill-grupo-titulo{
+  font-size: 16px;
+  font-weight: 600;
+  color: #2a2a2a;
+  margin: 1rem 0 0.5rem 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+
+.skills h2{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 24px;
+  letter-spacing: 2px;
+  margin-top: 1.5rem;
+  border-bottom: 1px solid;
+  padding-bottom: 0.5rem;
+}
+
+.skills-skill_grupo {
+  font-size: 16px;
+  font-weight: 600;
+  color: #2a2a2a;
+  text-transform: uppercase;
+  letter-spacing: 0.6rem;
+  margin: 1rem 0 0.6 rem;
+}
+
+.skills{
+  margin-bottom: 0.85rem;
+}
+
+.skills-topo{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.skills-none{
+  font-size: 13px;
+  color: white;
+}
+
+.skills-pct {
+  font-size: 12px;
+  color: white;
+}
+
+.skill-barra-bg{
+  background: rgba(0,0,0,0,0.08);
+  border-radius: 90px;
+  height: 4px;
+}
+
+.skill-barra{
+  height: 8px;
+  border-radius: 99px;
+  background: #0e8ceb;
+  transition: width 1s ease;
+}
+
+.idiomas{
+  margin-top: 1.5rem;
+  border-top: 1px solid  #ddd;
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 30px;
+}
+
+.idioma-item{
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  border-radius: 1px solid #ddd;
+}
+
+.idioma-nome{
+  font-size: 20px;
+  color: #2a2a2a;
+}
+
+.idioma-nivel{
+  font-size: 12px;
+  color: #888;;
+}
+
+.conteudo_principal{
+  padding: 0 2.5rem;
+  display: grid;
+  grid-template-columns: 1fr 280px; 
+  gap: 2rem;
+  align-items: start;
+}
