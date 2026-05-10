@@ -75,7 +75,7 @@ function Etapa({ titulo, status, descrição, softskills, techs }) {
   )
 }
 
-function Mapa_de_carreira() {
+function Mapadecarreira() {
   return (
     <section className='mapa'>
       <h2>Mapa de carreira</h2>
@@ -189,7 +189,7 @@ function App() {
       <div className='folha'>
         <Header />
         <Sobre />
-        <Mapa_de_carreira />
+        <Mapadecarreira />
         <Skills /> 
 
       </div>
