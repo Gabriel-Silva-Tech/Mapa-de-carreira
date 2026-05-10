@@ -189,7 +189,7 @@ function App() {
       <div className='folha'>
         <Header />
         <Sobre />
-        <Mapadecarreira />
+        <MapaDecarreira />
         <Skills /> 
 
       </div>
