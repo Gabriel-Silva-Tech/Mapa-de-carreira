@@ -75,7 +75,7 @@ function Etapa({ titulo, status, descrição, softskills, techs }) {
   )
 }
 
-function Mapadecarreira() {
+function MapaDecarreira() {
   return (
     <section className='mapa'>
       <h2>Mapa de carreira</h2>
