@@ -181,7 +181,7 @@ body{
 
 .timeline{
   position: relative;
-  padding-left: 24px;
+  padding-left: 23px;
 }
 
 .timeline::before{
@@ -435,6 +435,10 @@ body{
 
 @media (max-width: 600px) {
 
+  .pagina {
+  padding: 0;
+}
+
   .header {
     flex-direction: column;
   }
@@ -458,7 +462,7 @@ body{
     align-items: flex-start;
     gap: 0.4rem;
   }
-  
+
 
   .info h1 {
     font-size: 22px;
