@@ -1,7 +1,24 @@
-import { useState} from 'react';
 import './App.css';
 import foto from '../src/minha_foto2.png';
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
+import { useState, useEffect, useRef } from 'react';
+
+
+function useScrollAnimation() {
+  const ref = useRef(null);
+  const [visivel, setVisivel] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) setVisivel(true); },
+      { threshold: 0.15 }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+
+  return [ref, visivel];
+}
 
 function Header() {
   return (
@@ -25,8 +42,10 @@ function Header() {
 }
 
 function Sobre() {
+  const [ref, visivel]  = useScrollAnimation();
+
   return (
-    <section className='sobre'>
+    <section ref={ref} className={`sobre ${visivel ? 'visivel' : ''}`}>
       <h2>Olá, meu nome é Gabriel</h2>
       <p>
       Sou estudante de tecnologia pelo PROA Profissional, com foco em desenvolvimento Fullstack e aprofundando meus conhecimentos em Java, React e JavaScript. Meu objetivo é contribuir com o time no desenvolvimento de projetos excelentes, unindo qualidade técnica a uma boa experiência para o usuário. Acredito no crescimento contínuo tanto nas minhas hard e soft skills, e busco um ambiente onde eu possa aprender, colaborar e evoluir junto com a equipe.
@@ -47,7 +66,7 @@ function Etapa({ titulo, status, descrição, softskills, techs }) {
           <h3>{titulo}</h3>
           <div style={{ display: "flex", gap: "8px", alignItems: "center" }}>
             <span className='indicador'>
-              {status === 'atual' ? 'Você está aqui'
+              {status === 'atual' ? 'Eu estou aqui'
                 : status === 'proximo' ? 'Próximo passo'
                 : 'Objetivo'}
             </span>
@@ -74,8 +93,9 @@ function Etapa({ titulo, status, descrição, softskills, techs }) {
 }
 
 function MapaDeCarreira() {
+  const [ref, visivel] = useScrollAnimation();
   return (
-    <section className='mapa'>
+    <section ref={ref} className={`mapa ${visivel ? 'visivel' : ''}`}>
       <h2>Mapa de carreira</h2>
       <div className='timeline'>
 
@@ -140,20 +160,21 @@ function SkillBar({nome, porcentagem}){
 }
 
 function Skills() {
+  const [ref, visivel] = useScrollAnimation();
   const Frontend = [
     { nome: 'HTML/CSS', porcentagem: 80 },
-    { nome: 'JavaScript', porcentagem: 60 },
-    { nome: 'React', porcentagem: 65 },
+    { nome: 'JavaScript', porcentagem: 30 },
+    { nome: 'React', porcentagem: 60 },
   ];
 
   const backend = [
-    { nome: 'Java', porcentagem: 70 },
-    { nome: 'Springboot', porcentagem: 40 },
-    { nome: 'MySQL', porcentagem: 80 },
+    { nome: 'Java', porcentagem: 35 },
+    { nome: 'Springboot', porcentagem: 25 },
+    { nome: 'MySQL', porcentagem: 30 },
   ];
 
   return (
-    <section className="skills">
+     <section ref={ref} className={`skills ${visivel ? 'visivel' : ''}`}>
       <h2>Skills</h2>
 
       <p className="skill-grupo-titulo">Frontend</p>
@@ -161,7 +182,7 @@ function Skills() {
         <SkillBar key={i} nome={s.nome} porcentagem={s.porcentagem} />
       ))}
 
-      <p className="skill-grupo-titulo" style={{ marginTop: '1.25rem' }}>Backend</p>
+      <p className="skill-grupo-titulo" style={{ marginTop: '3.25rem' }}>Backend</p>
       {backend.map((s, i) => (
         <SkillBar key={i} nome={s.nome} porcentagem={s.porcentagem} />
       ))}
