@@ -29,11 +29,9 @@ function Sobre() {
     <section className='sobre'>
       <h2>Olá, meu nome é Gabriel</h2>
       <p>
-Sou estudante de tecnologia pelo PROA Profissional, com foco em desenvolvimento Fullstack e aprofundando meus conhecimentos em Java, React e JavaScript. Meu objetivo é contribuir com o time no desenvolvimento de projetos excelentes, unindo qualidade técnica a uma boa experiência para o usuário. Acredito no crescimento contínuo tanto nas minhas hard e soft skills, e busco um ambiente onde eu possa aprender, colaborar e evoluir junto com a equipe.      </p>
-      
-        <a href='#' className='btn-cv'>Baixar meu cv</a>
-     
-    </section>
+      Sou estudante de tecnologia pelo PROA Profissional, com foco em desenvolvimento Fullstack e aprofundando meus conhecimentos em Java, React e JavaScript. Meu objetivo é contribuir com o time no desenvolvimento de projetos excelentes, unindo qualidade técnica a uma boa experiência para o usuário. Acredito no crescimento contínuo tanto nas minhas hard e soft skills, e busco um ambiente onde eu possa aprender, colaborar e evoluir junto com a equipe.
+       </p>
+      </section>
   )
 }
 
