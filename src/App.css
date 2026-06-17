@@ -406,6 +406,34 @@ body{
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
+
+.botao-cv {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.7rem 1.5rem;
+  background-color:#0e8ceb;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.botao-cv:hover {
+  background-color:#1a1a1a;
+}
+
+.botao-cv {
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.botao-cv:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 6px white) drop-shadow(0 0 12px rgba(255,255,255,0.6));
+}
+
+
+
 .sobre.visivel, .mapa.visivel, .skills.visivel {
   opacity: 1;
   transform: translateY(0);

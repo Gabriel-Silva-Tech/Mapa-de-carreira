@@ -50,6 +50,10 @@ function Sobre() {
       <p>
       Sou estudante de tecnologia pelo PROA Profissional, com foco em desenvolvimento Fullstack e aprofundando meus conhecimentos em Java, React e JavaScript. Meu objetivo é contribuir com o time no desenvolvimento de projetos excelentes, unindo qualidade técnica a uma boa experiência para o usuário. Acredito no crescimento contínuo tanto nas minhas hard e soft skills, e busco um ambiente onde eu possa aprender, colaborar e evoluir junto com a equipe.
        </p>
+      <a href="/cv_gabriel-conceicao.pdf" download className="botao-cv"
+      >
+        Baixar o meu CV
+      </a>
       </section>
   )
 }
